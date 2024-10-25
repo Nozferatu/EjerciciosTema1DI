@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cajaTexto"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="10dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/imagenMusculo"
+        >
+
+        <TextView
+            android:id="@+id/nombreMusculo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Esternocleidomastoideo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/lugarMusculo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lados del cuello"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nombreMusculo"
+            />
+
+        <TextView
+            android:id="@+id/descripcionMusculo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="230sp"
+            android:text="@string/descripcion_esternocleidomastoideo"
+            app:layout_constraintStart_toEndOf="@id/barrera"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="right"
+            app:constraint_referenced_ids="nombreMusculo, lugarMusculo"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imagenMusculo"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_weight="3"
+        android:src="@drawable/musculo"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cajaTexto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
